@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TracingAlphabets">
             <connections>
+                <outlet property="lowerLetter" destination="EWP-Xi-oTU" id="KGn-t8-7zo"/>
+                <outlet property="pic" destination="AY7-Vq-Hty" id="WaK-bV-P1e"/>
+                <outlet property="upperLetter" destination="5Aj-bf-gZ7" id="Jhw-q1-pMh"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -15,11 +18,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picA.png" translatesAutoresizingMaskIntoConstraints="NO" id="AY7-Vq-Hty">
-                    <rect key="frame" x="20" y="20" width="150" height="150"/>
+                    <rect key="frame" x="20" y="206" width="120" height="120"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="letterA.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-bf-gZ7">
-                    <rect key="frame" x="42" y="178" width="237" height="176"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="upperA.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-bf-gZ7">
+                    <rect key="frame" x="20" y="20" width="140" height="176"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lowerA.png" translatesAutoresizingMaskIntoConstraints="NO" id="EWP-Xi-oTU">
+                    <rect key="frame" x="159" y="178" width="140" height="176"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OX-pc-rzr">
@@ -30,6 +37,9 @@
                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loadA" destination="-1" eventType="touchUpInside" id="S06-rE-Hb5"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1E-SC-OJm">
                     <rect key="frame" x="51" y="368" width="31" height="31"/>
@@ -39,6 +49,9 @@
                         <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loadB" destination="-1" eventType="touchUpInside" id="Gp6-8V-l3J"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXe-Vo-bTG">
                     <rect key="frame" x="82" y="368" width="31" height="31"/>
@@ -48,6 +61,9 @@
                         <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loadC" destination="-1" eventType="touchUpInside" id="TO8-8S-Fyi"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="no0-Xr-mmS">
                     <rect key="frame" x="113" y="399" width="31" height="31"/>
@@ -137,6 +153,9 @@
                         <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loadD" destination="-1" eventType="touchUpInside" id="Bhg-Xk-wMs"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZQ-7u-i8j">
                     <rect key="frame" x="176" y="368" width="31" height="31"/>
@@ -280,8 +299,9 @@
     </objects>
     <resources>
         <image name="home.png" width="725" height="752"/>
-        <image name="letterA.png" width="300" height="230"/>
+        <image name="lowerA.png" width="75" height="76"/>
         <image name="menu.jpg" width="120" height="80"/>
         <image name="picA.png" width="747" height="793"/>
+        <image name="upperA.png" width="92" height="75"/>
     </resources>
 </document>

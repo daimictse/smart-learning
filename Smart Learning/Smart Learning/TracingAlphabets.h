@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface TracingAlphabets : UIViewController {
-    char currentLetter;
+    IBOutlet UIImageView *pic;
+    IBOutlet UIImageView *upperLetter;
+    IBOutlet UIImageView *lowerLetter;
 }
 
 - (IBAction)Back;
+- (void) setImages:(char) letter;
+- (IBAction)loadA;
+- (IBAction)loadB;
+- (IBAction)loadC;
+- (IBAction)loadD;
+- (IBAction)loadE;
 
 @end

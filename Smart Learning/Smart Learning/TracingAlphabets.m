@@ -19,7 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        currentLetter = 'A';
     }
     return self;
 }
@@ -39,4 +38,33 @@
 - (IBAction)Back {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+- (void) setImages:(char) letter {
+    NSString *name = [NSString stringWithFormat:@"pic%c.png",letter];
+    UIImage *image = [UIImage imageNamed:name];
+    [pic setImage:image];
+    name = [NSString stringWithFormat:@"upper%c.png", letter];
+    image = [UIImage imageNamed:name];
+    [upperLetter setImage:image];
+    name = [NSString stringWithFormat:@"lower%c.png", letter];
+    image = [UIImage imageNamed:name];
+    [lowerLetter setImage:image];
+}
+
+- (IBAction)loadA {
+    [self setImages:'A'];
+}
+
+- (IBAction)loadB {
+    [self setImages:'B'];
+}
+
+- (IBAction)loadC {
+    [self setImages:'C'];
+}
+
+- (IBAction)loadD {
+    [self setImages:'D'];
+}
+
 @end

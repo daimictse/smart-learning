@@ -48,26 +48,16 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USt-eb-RsW">
-                    <rect key="frame" x="20" y="20" width="126" height="43"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                    <state key="normal" title="Try Again">
-                        <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uMw-tQ-Xo3">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green.png" translatesAutoresizingMaskIntoConstraints="NO" id="uMw-tQ-Xo3">
                     <rect key="frame" x="20" y="136" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="Wdo-62-KuB" appends="YES" id="38a-p2-xkg"/>
-                        <outletCollection property="gestureRecognizers" destination="Wdo-62-KuB" appends="YES" id="wmh-Hm-oA3"/>
-                        <outletCollection property="gestureRecognizers" destination="GOQ-89-D49" appends="YES" id="6FL-rB-ZDi"/>
+                        <outletCollection property="gestureRecognizers" destination="Wdo-62-KuB" appends="YES" id="VUn-UJ-AYd"/>
+                        <outletCollection property="gestureRecognizers" destination="GOQ-89-D49" appends="YES" id="zfZ-ca-EAj"/>
                     </connections>
                 </imageView>
-                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EGc-x4-Tv1">
+                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red.png" translatesAutoresizingMaskIntoConstraints="NO" id="EGc-x4-Tv1">
                     <rect key="frame" x="200" y="136" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
@@ -85,15 +75,15 @@
                         <outletCollection property="gestureRecognizers" destination="yYX-MH-j38" appends="YES" id="NQK-xY-sje"/>
                     </connections>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qh-8f-eJv">
-                    <rect key="frame" x="237" y="398" width="63" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qh-8f-eJv">
+                    <rect key="frame" x="250" y="375" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="Done">
+                    <state key="normal" title="Done" image="done.jpg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="mixedColorIsCorrect" destination="-1" eventType="touchUpInside" id="aoE-8Q-101"/>
+                        <action selector="checkMixedColorIsCorrect" destination="-1" eventType="touchUpInside" id="ujt-mW-prK"/>
                     </connections>
                 </button>
             </subviews>
@@ -101,18 +91,15 @@
             <gestureRecognizers/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="Wdo-62-KuB" appends="YES" id="EAR-aU-V7X"/>
-            </connections>
         </view>
         <swipeGestureRecognizer direction="right" id="Wdo-62-KuB">
             <connections>
-                <action selector="swipeColor1:" destination="-1" id="ccF-ix-xCL"/>
+                <action selector="swipeColor1:" destination="-1" id="RwU-aT-kkN"/>
             </connections>
         </swipeGestureRecognizer>
         <swipeGestureRecognizer direction="left" id="GOQ-89-D49">
             <connections>
-                <action selector="swipeColor1:" destination="-1" id="mt3-Uv-Hli"/>
+                <action selector="swipeColor1:" destination="-1" id="7xv-vK-yH8"/>
             </connections>
         </swipeGestureRecognizer>
         <swipeGestureRecognizer direction="right" id="1TC-bQ-8HY">
@@ -137,10 +124,11 @@
         </swipeGestureRecognizer>
     </objects>
     <resources>
-        <image name="green.jpg" width="425" height="318"/>
+        <image name="done.jpg" width="200" height="200"/>
+        <image name="green.png" width="115" height="87"/>
         <image name="home.png" width="725" height="752"/>
         <image name="menu.jpg" width="120" height="80"/>
         <image name="questionMark.jpg" width="794" height="739"/>
-        <image name="red.jpg" width="1278" height="990"/>
+        <image name="red.png" width="149" height="150"/>
     </resources>
 </document>
