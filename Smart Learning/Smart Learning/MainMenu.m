@@ -37,15 +37,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)alphabelPg {
-    TracingAlphabets *tracingPg = [[TracingAlphabets alloc] initWithNibName:nil bundle:nil];
-    [self presentViewController:tracingPg animated:YES completion:NULL];
-}
-
-- (IBAction)colorPg {
-    MixingColors *mixingPg = [[MixingColors alloc] initWithNibName:nil bundle:nil];
-    [self presentViewController:mixingPg animated:YES completion:NULL];
-
-}
 
 @end

@@ -10,7 +10,6 @@
 
 @interface MainMenu : UIViewController
 
-- (IBAction)alphabelPg;
-- (IBAction)colorPg;
+
 
 @end

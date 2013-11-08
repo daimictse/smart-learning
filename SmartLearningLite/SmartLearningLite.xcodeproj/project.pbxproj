@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAF52D43182C3EB1002B88A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52D42182C3EB1002B88A3 /* Foundation.framework */; };
+		EAF52D45182C3EB1002B88A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52D44182C3EB1002B88A3 /* CoreGraphics.framework */; };
+		EAF52D47182C3EB1002B88A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52D46182C3EB1002B88A3 /* UIKit.framework */; };
+		EAF52D4D182C3EB1002B88A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAF52D4B182C3EB1002B88A3 /* InfoPlist.strings */; };
+		EAF52D4F182C3EB1002B88A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF52D4E182C3EB1002B88A3 /* main.m */; };
+		EAF52D53182C3EB1002B88A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF52D52182C3EB1002B88A3 /* AppDelegate.m */; };
+		EAF52D56182C3EB1002B88A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF52D54182C3EB1002B88A3 /* Main.storyboard */; };
+		EAF52D59182C3EB1002B88A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF52D58182C3EB1002B88A3 /* ViewController.m */; };
+		EAF52D5B182C3EB1002B88A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF52D5A182C3EB1002B88A3 /* Images.xcassets */; };
+		EAF52D62182C3EB1002B88A3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52D61182C3EB1002B88A3 /* XCTest.framework */; };
+		EAF52D63182C3EB1002B88A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52D42182C3EB1002B88A3 /* Foundation.framework */; };
+		EAF52D64182C3EB1002B88A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52D46182C3EB1002B88A3 /* UIKit.framework */; };
+		EAF52D6C182C3EB1002B88A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAF52D6A182C3EB1002B88A3 /* InfoPlist.strings */; };
+		EAF52D6E182C3EB1002B88A3 /* SmartLearningLiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF52D6D182C3EB1002B88A3 /* SmartLearningLiteTests.m */; };
+		EAF52D78182C422F002B88A3 /* cursive alphabet resz.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52D77182C422F002B88A3 /* cursive alphabet resz.png */; };
+		EAF52D7A182C4515002B88A3 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52D79182C4515002B88A3 /* home.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAF52D65182C3EB1002B88A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAF52D37182C3EB0002B88A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAF52D3E182C3EB1002B88A3;
+			remoteInfo = SmartLearningLite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EAF52D3F182C3EB1002B88A3 /* SmartLearningLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartLearningLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAF52D42182C3EB1002B88A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EAF52D44182C3EB1002B88A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EAF52D46182C3EB1002B88A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EAF52D4A182C3EB1002B88A3 /* SmartLearningLite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartLearningLite-Info.plist"; sourceTree = "<group>"; };
+		EAF52D4C182C3EB1002B88A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EAF52D4E182C3EB1002B88A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EAF52D50182C3EB1002B88A3 /* SmartLearningLite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartLearningLite-Prefix.pch"; sourceTree = "<group>"; };
+		EAF52D51182C3EB1002B88A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EAF52D52182C3EB1002B88A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EAF52D55182C3EB1002B88A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAF52D57182C3EB1002B88A3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EAF52D58182C3EB1002B88A3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EAF52D5A182C3EB1002B88A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EAF52D60182C3EB1002B88A3 /* SmartLearningLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartLearningLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAF52D61182C3EB1002B88A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EAF52D69182C3EB1002B88A3 /* SmartLearningLiteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartLearningLiteTests-Info.plist"; sourceTree = "<group>"; };
+		EAF52D6B182C3EB1002B88A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EAF52D6D182C3EB1002B88A3 /* SmartLearningLiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartLearningLiteTests.m; sourceTree = "<group>"; };
+		EAF52D77182C422F002B88A3 /* cursive alphabet resz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cursive alphabet resz.png"; sourceTree = "<group>"; };
+		EAF52D79182C4515002B88A3 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAF52D3C182C3EB1002B88A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF52D45182C3EB1002B88A3 /* CoreGraphics.framework in Frameworks */,
+				EAF52D47182C3EB1002B88A3 /* UIKit.framework in Frameworks */,
+				EAF52D43182C3EB1002B88A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAF52D5D182C3EB1002B88A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF52D62182C3EB1002B88A3 /* XCTest.framework in Frameworks */,
+				EAF52D64182C3EB1002B88A3 /* UIKit.framework in Frameworks */,
+				EAF52D63182C3EB1002B88A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAF52D36182C3EB0002B88A3 = {
+			isa = PBXGroup;
+			children = (
+				EAF52D48182C3EB1002B88A3 /* SmartLearningLite */,
+				EAF52D67182C3EB1002B88A3 /* SmartLearningLiteTests */,
+				EAF52D41182C3EB1002B88A3 /* Frameworks */,
+				EAF52D40182C3EB1002B88A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAF52D40182C3EB1002B88A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAF52D3F182C3EB1002B88A3 /* SmartLearningLite.app */,
+				EAF52D60182C3EB1002B88A3 /* SmartLearningLiteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAF52D41182C3EB1002B88A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAF52D42182C3EB1002B88A3 /* Foundation.framework */,
+				EAF52D44182C3EB1002B88A3 /* CoreGraphics.framework */,
+				EAF52D46182C3EB1002B88A3 /* UIKit.framework */,
+				EAF52D61182C3EB1002B88A3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAF52D48182C3EB1002B88A3 /* SmartLearningLite */ = {
+			isa = PBXGroup;
+			children = (
+				EAF52D51182C3EB1002B88A3 /* AppDelegate.h */,
+				EAF52D52182C3EB1002B88A3 /* AppDelegate.m */,
+				EAF52D54182C3EB1002B88A3 /* Main.storyboard */,
+				EAF52D57182C3EB1002B88A3 /* ViewController.h */,
+				EAF52D58182C3EB1002B88A3 /* ViewController.m */,
+				EAF52D5A182C3EB1002B88A3 /* Images.xcassets */,
+				EAF52D49182C3EB1002B88A3 /* Supporting Files */,
+			);
+			path = SmartLearningLite;
+			sourceTree = "<group>";
+		};
+		EAF52D49182C3EB1002B88A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAF52D77182C422F002B88A3 /* cursive alphabet resz.png */,
+				EAF52D79182C4515002B88A3 /* home.png */,
+				EAF52D4A182C3EB1002B88A3 /* SmartLearningLite-Info.plist */,
+				EAF52D4B182C3EB1002B88A3 /* InfoPlist.strings */,
+				EAF52D4E182C3EB1002B88A3 /* main.m */,
+				EAF52D50182C3EB1002B88A3 /* SmartLearningLite-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EAF52D67182C3EB1002B88A3 /* SmartLearningLiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAF52D6D182C3EB1002B88A3 /* SmartLearningLiteTests.m */,
+				EAF52D68182C3EB1002B88A3 /* Supporting Files */,
+			);
+			path = SmartLearningLiteTests;
+			sourceTree = "<group>";
+		};
+		EAF52D68182C3EB1002B88A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAF52D69182C3EB1002B88A3 /* SmartLearningLiteTests-Info.plist */,
+				EAF52D6A182C3EB1002B88A3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAF52D3E182C3EB1002B88A3 /* SmartLearningLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAF52D71182C3EB1002B88A3 /* Build configuration list for PBXNativeTarget "SmartLearningLite" */;
+			buildPhases = (
+				EAF52D3B182C3EB1002B88A3 /* Sources */,
+				EAF52D3C182C3EB1002B88A3 /* Frameworks */,
+				EAF52D3D182C3EB1002B88A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartLearningLite;
+			productName = SmartLearningLite;
+			productReference = EAF52D3F182C3EB1002B88A3 /* SmartLearningLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EAF52D5F182C3EB1002B88A3 /* SmartLearningLiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAF52D74182C3EB1002B88A3 /* Build configuration list for PBXNativeTarget "SmartLearningLiteTests" */;
+			buildPhases = (
+				EAF52D5C182C3EB1002B88A3 /* Sources */,
+				EAF52D5D182C3EB1002B88A3 /* Frameworks */,
+				EAF52D5E182C3EB1002B88A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAF52D66182C3EB1002B88A3 /* PBXTargetDependency */,
+			);
+			name = SmartLearningLiteTests;
+			productName = SmartLearningLiteTests;
+			productReference = EAF52D60182C3EB1002B88A3 /* SmartLearningLiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAF52D37182C3EB0002B88A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Doris Shum";
+				TargetAttributes = {
+					EAF52D5F182C3EB1002B88A3 = {
+						TestTargetID = EAF52D3E182C3EB1002B88A3;
+					};
+				};
+			};
+			buildConfigurationList = EAF52D3A182C3EB0002B88A3 /* Build configuration list for PBXProject "SmartLearningLite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAF52D36182C3EB0002B88A3;
+			productRefGroup = EAF52D40182C3EB1002B88A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAF52D3E182C3EB1002B88A3 /* SmartLearningLite */,
+				EAF52D5F182C3EB1002B88A3 /* SmartLearningLiteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAF52D3D182C3EB1002B88A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF52D5B182C3EB1002B88A3 /* Images.xcassets in Resources */,
+				EAF52D7A182C4515002B88A3 /* home.png in Resources */,
+				EAF52D4D182C3EB1002B88A3 /* InfoPlist.strings in Resources */,
+				EAF52D78182C422F002B88A3 /* cursive alphabet resz.png in Resources */,
+				EAF52D56182C3EB1002B88A3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAF52D5E182C3EB1002B88A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF52D6C182C3EB1002B88A3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAF52D3B182C3EB1002B88A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF52D59182C3EB1002B88A3 /* ViewController.m in Sources */,
+				EAF52D53182C3EB1002B88A3 /* AppDelegate.m in Sources */,
+				EAF52D4F182C3EB1002B88A3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAF52D5C182C3EB1002B88A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF52D6E182C3EB1002B88A3 /* SmartLearningLiteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAF52D66182C3EB1002B88A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAF52D3E182C3EB1002B88A3 /* SmartLearningLite */;
+			targetProxy = EAF52D65182C3EB1002B88A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EAF52D4B182C3EB1002B88A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAF52D4C182C3EB1002B88A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EAF52D54182C3EB1002B88A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAF52D55182C3EB1002B88A3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAF52D6A182C3EB1002B88A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAF52D6B182C3EB1002B88A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAF52D6F182C3EB1002B88A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EAF52D70182C3EB1002B88A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAF52D72182C3EB1002B88A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartLearningLite/SmartLearningLite-Prefix.pch";
+				INFOPLIST_FILE = "SmartLearningLite/SmartLearningLite-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EAF52D73182C3EB1002B88A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartLearningLite/SmartLearningLite-Prefix.pch";
+				INFOPLIST_FILE = "SmartLearningLite/SmartLearningLite-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EAF52D75182C3EB1002B88A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SmartLearningLite.app/SmartLearningLite";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartLearningLite/SmartLearningLite-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SmartLearningLiteTests/SmartLearningLiteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EAF52D76182C3EB1002B88A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SmartLearningLite.app/SmartLearningLite";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SmartLearningLite/SmartLearningLite-Prefix.pch";
+				INFOPLIST_FILE = "SmartLearningLiteTests/SmartLearningLiteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAF52D3A182C3EB0002B88A3 /* Build configuration list for PBXProject "SmartLearningLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAF52D6F182C3EB1002B88A3 /* Debug */,
+				EAF52D70182C3EB1002B88A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAF52D71182C3EB1002B88A3 /* Build configuration list for PBXNativeTarget "SmartLearningLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAF52D72182C3EB1002B88A3 /* Debug */,
+				EAF52D73182C3EB1002B88A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EAF52D74182C3EB1002B88A3 /* Build configuration list for PBXNativeTarget "SmartLearningLiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAF52D75182C3EB1002B88A3 /* Debug */,
+				EAF52D76182C3EB1002B88A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAF52D37182C3EB0002B88A3 /* Project object */;
+}
