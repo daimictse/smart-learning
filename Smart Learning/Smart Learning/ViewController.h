@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LetterWritingPad.h"
 
 typedef int ColorMatrix[6][6];
 
@@ -15,8 +16,7 @@ typedef int ColorMatrix[6][6];
     IBOutlet UIView *menuView;
     IBOutlet UIView *alphabetView;
     IBOutlet UIView *colorView;
-    IBOutlet UIView *alphabetAnimationView;
-    
+
     // inside home
     IBOutlet UITextField *usernameField;
     NSString *username;
@@ -25,16 +25,22 @@ typedef int ColorMatrix[6][6];
     IBOutlet UIButton *userNameButton;
     
     // inside alphabet page
+    IBOutlet LetterWritingPad *upperLetterTracingView;
+    IBOutlet LetterWritingPad *lowerLetterTracingView;
+    IBOutlet UIView *alphabetAnimationView;
     IBOutlet UIImageView *pic;
     IBOutlet UIImageView *upperLetter;
     IBOutlet UIImageView *lowerLetter;
     IBOutlet UIImageView *animation;
     char lastAlphabet;
+    int expectedStrokeCount;
     
     // inside color page
+    IBOutlet UIView *colorScoreView;
     IBOutlet UIImageView *color1View;
     IBOutlet UIImageView *color2View;
     IBOutlet UIImageView *mixedColorView;
+    IBOutlet UIImageView *colorScoreImageView;
     int color1Index;
     int color2Index;
     int mixedColorIndex;
@@ -62,11 +68,13 @@ typedef int ColorMatrix[6][6];
 - (IBAction)swipeColor1: (UISwipeGestureRecognizer *) recognizer;
 - (IBAction)swipeColor2: (UISwipeGestureRecognizer *) recognizer;
 - (IBAction)swipeMixedColor: (UISwipeGestureRecognizer *) recognizer;
+- (IBAction)closeColorScore;
 
 // inside alphabet page
 - (void) setImages:(char) letter;
 - (IBAction) watchAlphabetAnimation;
 - (IBAction) closeAnimation;
+- (IBAction) RateAlphabetTracing;
 - (IBAction)loadA;
 - (IBAction)loadB;
 - (IBAction)loadC;

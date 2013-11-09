@@ -126,6 +126,9 @@
 		EAF52E01182CB83F002B88A3 /* upperX.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52DE7182CB83F002B88A3 /* upperX.png */; };
 		EAF52E02182CB83F002B88A3 /* upperY.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52DE8182CB83F002B88A3 /* upperY.png */; };
 		EAF52E03182CB83F002B88A3 /* upperZ.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52DE9182CB83F002B88A3 /* upperZ.png */; };
+		EAF52E06182D8A1A002B88A3 /* tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52E04182D8A1A002B88A3 /* tryagain.png */; };
+		EAF52E07182D8A1A002B88A3 /* welldone.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52E05182D8A1A002B88A3 /* welldone.png */; };
+		EAF52E0A182DA661002B88A3 /* LetterWritingPad.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF52E09182DA661002B88A3 /* LetterWritingPad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -263,6 +266,10 @@
 		EAF52DE7182CB83F002B88A3 /* upperX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperX.png; sourceTree = "<group>"; };
 		EAF52DE8182CB83F002B88A3 /* upperY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperY.png; sourceTree = "<group>"; };
 		EAF52DE9182CB83F002B88A3 /* upperZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperZ.png; sourceTree = "<group>"; };
+		EAF52E04182D8A1A002B88A3 /* tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tryagain.png; sourceTree = "<group>"; };
+		EAF52E05182D8A1A002B88A3 /* welldone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welldone.png; sourceTree = "<group>"; };
+		EAF52E08182DA661002B88A3 /* LetterWritingPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterWritingPad.h; sourceTree = "<group>"; };
+		EAF52E09182DA661002B88A3 /* LetterWritingPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterWritingPad.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +334,8 @@
 				EAF52C9A18284F0E002B88A3 /* Main.storyboard */,
 				EAF52C9D18284F0E002B88A3 /* ViewController.h */,
 				EAF52C9E18284F0E002B88A3 /* ViewController.m */,
+				EAF52E08182DA661002B88A3 /* LetterWritingPad.h */,
+				EAF52E09182DA661002B88A3 /* LetterWritingPad.m */,
 				EAF52CA018284F0E002B88A3 /* Images.xcassets */,
 				EAF52C8F18284F0E002B88A3 /* Supporting Files */,
 			);
@@ -347,6 +356,8 @@
 				EAF52DD1182CB83F002B88A3 /* lowerO.png */,
 				EAF52DD2182CB83F002B88A3 /* lowerP.png */,
 				EAF52DD3182CB83F002B88A3 /* lowerQ.png */,
+				EAF52E04182D8A1A002B88A3 /* tryagain.png */,
+				EAF52E05182D8A1A002B88A3 /* welldone.png */,
 				EAF52DD4182CB83F002B88A3 /* lowerR.png */,
 				EAF52DD5182CB83F002B88A3 /* lowerS.png */,
 				EAF52DD6182CB83F002B88A3 /* lowerT.png */,
@@ -562,6 +573,7 @@
 				EAF52DC8182CB4AC002B88A3 /* upperF.png in Resources */,
 				EAF52CF7182AE154002B88A3 /* purple.png in Resources */,
 				EAF52DEC182CB83F002B88A3 /* lowerP.png in Resources */,
+				EAF52E07182D8A1A002B88A3 /* welldone.png in Resources */,
 				EAF52DA3182C9E77002B88A3 /* 3.gif in Resources */,
 				EAF52DF5182CB83F002B88A3 /* lowerY.png in Resources */,
 				EAF52E01182CB83F002B88A3 /* upperX.png in Resources */,
@@ -630,6 +642,7 @@
 				EAF52DA4182C9E77002B88A3 /* 4.gif in Resources */,
 				EAF52D2D182B2769002B88A3 /* lowerC.png in Resources */,
 				EAF52D9F182C9E77002B88A3 /* 18.gif in Resources */,
+				EAF52E06182D8A1A002B88A3 /* tryagain.png in Resources */,
 				EAF52DCB182CB4AC002B88A3 /* upperI.png in Resources */,
 				EAF52CD518298FB9002B88A3 /* menu.jpg in Resources */,
 				EAF52D25182B228E002B88A3 /* picB.png in Resources */,
@@ -680,6 +693,7 @@
 				EAF52C9F18284F0E002B88A3 /* ViewController.m in Sources */,
 				EAF52C9918284F0E002B88A3 /* AppDelegate.m in Sources */,
 				EAF52C9518284F0E002B88A3 /* main.m in Sources */,
+				EAF52E0A182DA661002B88A3 /* LetterWritingPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

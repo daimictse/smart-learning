@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "MainMenu.h"
 
 @interface ViewController ()
 
@@ -25,6 +24,10 @@
     
     // initial alphabet page starts with 'A'
     lastAlphabet = 'A';
+    StrokeArray tempArray = {1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1};
+    [upperLetterTracingView setStrokCountArray:tempArray];
+    StrokeArray tempArray2 = {1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1};
+    [lowerLetterTracingView setStrokCountArray:tempArray2];
     
     // initial colors are green and red, and answer is the 'question marks'
     color1Index = 5;
@@ -92,7 +95,6 @@
     homeView.hidden = true;
     alphabetView.hidden = true;
     colorView.hidden = true;
-    alphabetAnimationView.hidden = true;
     
     if (username) {
         [userNameButton setTitleColor:[UIColor redColor] forState:0];
@@ -119,10 +121,15 @@
     menuView.hidden = true;
     alphabetView.hidden = true;
     colorView.hidden = true;
-    alphabetAnimationView.hidden = true;
 }
 
 - (IBAction)showAlphabetPg {
+    if ([upperLetterTracingView getStrokeCount] > 0) {
+        [upperLetterTracingView resetDrawingPad];
+    }
+    if ([lowerLetterTracingView getStrokeCount] > 0) {
+        [lowerLetterTracingView resetDrawingPad];
+    }
     alphabetView.hidden = false;
     homeView.hidden = true;
     menuView.hidden = true;
@@ -136,7 +143,7 @@
     menuView.hidden = true;
     [self setImages:lastAlphabet];
     alphabetView.hidden = true;
-    alphabetAnimationView.hidden = true;
+    colorScoreView.hidden = true;
 }
 
 // determine which color by the swipe gesture
@@ -180,16 +187,23 @@
 }
 
 - (IBAction)checkMixedColorIsCorrect {
+    UIImage *image;
     NSLog(@"color1: %d, color2: %d, mixed: %d",color1Index, color2Index, mixedColorIndex);
     if (colorMatrix[color1Index][color2Index] == mixedColorIndex) {
-        NSLog(@"Correct");
+        image = [UIImage imageNamed:@"welldone.png"];
     } else {
-        NSLog(@"Incorrect");
+        image = [UIImage imageNamed:@"tryagain.png"];
     }
+    [colorScoreImageView setImage:image];
+    colorScoreView.hidden = false;
+}
+
+- (IBAction)closeColorScore {
+    colorScoreView.hidden = true;
 }
 
 // set images according to the alphabet letter
-- (void) setImages:(char) letter {
+- (void) setImages:(char) letter {    
     lastAlphabet = letter;
     NSString *name = [NSString stringWithFormat:@"pic%c.png",letter];
     UIImage *image = [UIImage imageNamed:name];
@@ -200,6 +214,29 @@
     name = [NSString stringWithFormat:@"lower%c.png", letter];
     image = [UIImage imageNamed:name];
     [lowerLetter setImage:image];
+}
+
+- (IBAction)RateAlphabetTracing {
+    NSString *string = [NSString stringWithFormat:@"%c",lastAlphabet];
+    int asciiCode = [string characterAtIndex:0];
+    int index = asciiCode - 65;  // 'A' is at 65
+    int strokeCount = [upperLetterTracingView getStrokeCount];
+    if (strokeCount > 0) {
+        if ( strokeCount != [upperLetterTracingView getLetterStrokeCount:index]) {
+            // alert user
+            NSLog(@"stroke count not correct");
+        }
+        // see how close user writes to the original uppercase alphabet
+        
+    }
+    strokeCount = [lowerLetterTracingView getStrokeCount];
+    if (strokeCount > 0) {
+        if (strokeCount != [lowerLetterTracingView getLetterStrokeCount:index]) {
+            // alert user
+            NSLog(@"stroke count not correct");
+        }
+        // see how close user writes to the original lowercase alphabet
+    }
 }
 
 - (IBAction) watchAlphabetAnimation {
