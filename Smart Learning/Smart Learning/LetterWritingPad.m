@@ -67,16 +67,27 @@
     memcpy(strokeCountArray, tempArray, sizeof(strokeCountArray));
 }
 
--(void)resetDrawingPad {
-    // erase path
+-(NSMutableArray *)getPathPoints {
+    return pathPointArray;
+}
+
+- (int)rateIt {
     NSLog(@"Array %d",[pathPointArray count]);
     CGPoint point;
+    // select points from the path and compare to the designated points
     for (unsigned int i = 0; i<[pathPointArray count]; i++) {
         point = [[pathPointArray objectAtIndex:i] CGPointValue];
         NSLog(@"%f %f", point.x, point.y);
     }
+    return 90;
+}
+
+-(void)resetDrawingPad {
+    // erase path
     strokeCount = 0;
     [pathPointArray removeAllObjects];
+    [path removeAllPoints];
+    [self setNeedsDisplay];
 }
 // [path containsPoint:point]
 

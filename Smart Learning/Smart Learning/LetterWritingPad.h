@@ -28,5 +28,7 @@ typedef int StrokeArray[26];
 -(int) getLetterStrokeCount: (int)index;
 -(void)setStrokCountArray:(StrokeArray)tempArray;
 -(void)resetDrawingPad ;
+-(NSMutableArray *)getPathPoints;
+- (int)rateIt;
 
 @end

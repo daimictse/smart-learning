@@ -63,8 +63,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cursive alphabet resz.png" translatesAutoresizingMaskIntoConstraints="NO" id="FAw-dr-m02">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menuBkgd.png" translatesAutoresizingMaskIntoConstraints="NO" id="FAw-dr-m02">
+                                        <rect key="frame" x="0.0" y="15" width="320" height="480"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHc-IH-K5s">
@@ -72,7 +72,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
                                         <state key="normal" title="Welcome !">
-                                            <color key="titleColor" red="0.22172026040000001" green="0.089009215229999994" blue="0.50963824729999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -81,7 +81,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
                                         <state key="normal">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -257,6 +257,9 @@
                                         <state key="normal" title="Reset">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showAlphabetPg" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Aek-PL-mXC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsw-ZM-wrR">
                                         <rect key="frame" x="185" y="68" width="74" height="30"/>
@@ -681,7 +684,6 @@
     <resources>
         <image name="animation_A.gif" width="100" height="125"/>
         <image name="cursive alphabet resz.png" width="320" height="480"/>
-        <image name="cursive alphabet resz.png" width="320" height="480"/>
         <image name="done.jpg" width="200" height="200"/>
         <image name="done.jpg" width="200" height="200"/>
         <image name="green.png" width="115" height="87"/>
@@ -691,6 +693,7 @@
         <image name="lowerA.png" width="75" height="76"/>
         <image name="menu.jpg" width="120" height="80"/>
         <image name="menu.jpg" width="120" height="80"/>
+        <image name="menuBkgd.png" width="259" height="399"/>
         <image name="picA.png" width="747" height="793"/>
         <image name="questionMark.jpg" width="794" height="739"/>
         <image name="red.png" width="149" height="150"/>

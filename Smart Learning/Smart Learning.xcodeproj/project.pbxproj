@@ -129,6 +129,7 @@
 		EAF52E06182D8A1A002B88A3 /* tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52E04182D8A1A002B88A3 /* tryagain.png */; };
 		EAF52E07182D8A1A002B88A3 /* welldone.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52E05182D8A1A002B88A3 /* welldone.png */; };
 		EAF52E0A182DA661002B88A3 /* LetterWritingPad.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF52E09182DA661002B88A3 /* LetterWritingPad.m */; };
+		EAF52E0C182F478D002B88A3 /* menuBkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF52E0B182F478D002B88A3 /* menuBkgd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 		EAF52E05182D8A1A002B88A3 /* welldone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welldone.png; sourceTree = "<group>"; };
 		EAF52E08182DA661002B88A3 /* LetterWritingPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterWritingPad.h; sourceTree = "<group>"; };
 		EAF52E09182DA661002B88A3 /* LetterWritingPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterWritingPad.m; sourceTree = "<group>"; };
+		EAF52E0B182F478D002B88A3 /* menuBkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBkgd.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +353,7 @@
 				EAF52CFB182AE16E002B88A3 /* blueGreen.png */,
 				EAF52D1A182AE21D002B88A3 /* red.png */,
 				EAF52D26182B23E2002B88A3 /* lowerB.png */,
+				EAF52E0B182F478D002B88A3 /* menuBkgd.png */,
 				EAF52D2A182B2698002B88A3 /* upperC.png */,
 				EAF52DD0182CB83E002B88A3 /* lowerN.png */,
 				EAF52DD1182CB83F002B88A3 /* lowerO.png */,
@@ -640,6 +643,7 @@
 				EAF52DA1182C9E77002B88A3 /* 2.gif in Resources */,
 				EAF52DFE182CB83F002B88A3 /* upperU.png in Resources */,
 				EAF52DA4182C9E77002B88A3 /* 4.gif in Resources */,
+				EAF52E0C182F478D002B88A3 /* menuBkgd.png in Resources */,
 				EAF52D2D182B2769002B88A3 /* lowerC.png in Resources */,
 				EAF52D9F182C9E77002B88A3 /* 18.gif in Resources */,
 				EAF52E06182D8A1A002B88A3 /* tryagain.png in Resources */,

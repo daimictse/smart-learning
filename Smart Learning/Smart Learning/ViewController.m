@@ -97,7 +97,7 @@
     colorView.hidden = true;
     
     if (username) {
-        [userNameButton setTitleColor:[UIColor redColor] forState:0];
+        [userNameButton setTitleColor:[UIColor magentaColor] forState:0];
         userNameButton.titleLabel.font = [UIFont fontWithName:@"BradleyHandITCTT-Bold" size:40];//systemFontOfSize:40];
         [userNameButton setTitle:username forState:0];
     }
@@ -217,25 +217,43 @@
 }
 
 - (IBAction)RateAlphabetTracing {
+    int upperLetterScore=0;
+    int lowerLetterScore=0;
     NSString *string = [NSString stringWithFormat:@"%c",lastAlphabet];
     int asciiCode = [string characterAtIndex:0];
     int index = asciiCode - 65;  // 'A' is at 65
     int strokeCount = [upperLetterTracingView getStrokeCount];
     if (strokeCount > 0) {
         if ( strokeCount != [upperLetterTracingView getLetterStrokeCount:index]) {
-            // alert user
-            NSLog(@"stroke count not correct");
+             upperLetterScore = -1;
+        } else {
+            // check accuracy compared to the dotted alphabet on the image
+            upperLetterScore = [upperLetterTracingView rateIt];
         }
-        // see how close user writes to the original uppercase alphabet
-        
     }
     strokeCount = [lowerLetterTracingView getStrokeCount];
     if (strokeCount > 0) {
         if (strokeCount != [lowerLetterTracingView getLetterStrokeCount:index]) {
-            // alert user
-            NSLog(@"stroke count not correct");
+            lowerLetterScore = -1;
+        } else { // check accuracy compared to the dotted alphabet on the image
+            lowerLetterScore = [lowerLetterTracingView rateIt];
         }
-        // see how close user writes to the original lowercase alphabet
+    }
+    // show score
+    UIImage *image1, *image2;
+    if (upperLetterScore == -1) { // user used more than the correct number of stroke
+        image1 = [UIImage imageNamed:@"wrongStroke.png"];
+    } else if (upperLetterScore == 0) { // user didn't trace this letter, suggest trying
+        image1 = [UIImage imageNamed:@"tryit.png"];
+    } else { // show the score
+        
+    }
+    if (lowerLetterScore == -1) { // user used more than the correct number of stroke
+        image2 = [UIImage imageNamed:@"wrongStroke.png"];
+    } else if (lowerLetterScore == 0) { // user didn't trace this letter, suggest trying
+        image2 = [UIImage imageNamed:@"tryit.png"];
+    } else { // show the score
+        
     }
 }
 
