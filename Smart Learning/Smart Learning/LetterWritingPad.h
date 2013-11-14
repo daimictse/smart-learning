@@ -17,6 +17,8 @@ typedef int StrokeArray[26];
     int strokeCount;
     StrokeArray strokeCountArray;
     NSMutableArray *pathPointArray;
+    NSMutableArray *pathPointArray1;
+    NSMutableArray *pathPointArray2;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
@@ -28,7 +30,10 @@ typedef int StrokeArray[26];
 -(int) getLetterStrokeCount: (int)index;
 -(void)setStrokCountArray:(StrokeArray)tempArray;
 -(void)resetDrawingPad ;
--(NSMutableArray *)getPathPoints;
+//-(NSMutableArray *)getPathPoints;
 - (int)rateIt;
+-(void) checkCollinearity;
+//-(void)writePathToFile:(NSFileHandle *)myHandle ;
+- (double) distanceFrom:(CGPoint)point1 to:(CGPoint)point2;
 
 @end

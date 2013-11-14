@@ -12,7 +12,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    NSLog(@"init");
+    NSLog(@"pad init");
     strokeCount = 0;
     pathPointArray = [[NSMutableArray alloc]init];
     if (self = [super initWithCoder:aDecoder]) {
@@ -31,12 +31,26 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"begin");
+    NSLog(@"pad touchesbegan");
     strokeCount++;
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
     [path moveToPoint:p];
-    [pathPointArray addObject:[NSValue valueWithCGPoint:p]];
+    if (strokeCount == 1) {
+        [pathPointArray addObject:[NSValue valueWithCGPoint:p]];
+    } else {
+        int lastPointIndex = [pathPointArray count]-1;
+        CGPoint p2 = [[pathPointArray1 objectAtIndex:lastPointIndex] CGPointValue];
+        if ([self distanceFrom:p to:p2] < 10.0) {
+            [pathPointArray addObject:[NSValue valueWithCGPoint:p]];
+            strokeCount--;
+        } else {
+            // check first stroke
+            [self checkCollinearity];
+            
+            // start collecting points for the second stroke
+        }
+    }
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -67,18 +81,80 @@
     memcpy(strokeCountArray, tempArray, sizeof(strokeCountArray));
 }
 
--(NSMutableArray *)getPathPoints {
-    return pathPointArray;
+- (double) distanceFrom:(CGPoint)point1 to:(CGPoint)point2 {
+    long int deltaX = abs(point1.x - point2.x);
+    long int deltaY = abs(point2.y - point2.y);
+    return sqrt(deltaX * deltaX + deltaY * deltaY);
 }
 
-- (int)rateIt {
-    NSLog(@"Array %d",[pathPointArray count]);
-    CGPoint point;
-    // select points from the path and compare to the designated points
-    for (unsigned int i = 0; i<[pathPointArray count]; i++) {
-        point = [[pathPointArray objectAtIndex:i] CGPointValue];
-        NSLog(@"%f %f", point.x, point.y);
+/*-(NSMutableArray *)getPathPoints {
+    return pathPointArray;
+}*/
+
+-(void) checkCollinearity {
+    CGPoint point1, point2, point3;
+    unsigned int i=0;
+    
+    while (i < [pathPointArray count]-2) {
+        point1 = [[pathPointArray objectAtIndex:i] CGPointValue];
+        point2 = [[pathPointArray objectAtIndex:i+1] CGPointValue];
+        point3 = [[pathPointArray objectAtIndex:i+2] CGPointValue];
+        double m1 = (point2.y - point1.y) / (point2.x - point1.x);
+        double m2 = (point3.y - point1.y) / (point3.x - point1.x);
+        if (m1 == m2) { // determine whether the next point should be kept
+            [pathPointArray removeObjectAtIndex:i+1];
+        } else {
+            i++;
+        }
     }
+}
+/*
+-(void)writePathToFile:(NSFileHandle *)myHandle {
+    CGPoint point;
+
+    if (myHandle) {
+        [myHandle seekToEndOfFile];
+        for (unsigned int i = 0; i<[pathPointArray count]-1; i++) {
+            point = [[pathPointArray objectAtIndex:i] CGPointValue];
+            NSString *content= [NSString stringWithFormat:@"%d %d\n", (int)point.x,(int)point.y];
+            NSData *theData=[content dataUsingEncoding:NSUTF8StringEncoding];
+            [myHandle writeData:theData];
+        }
+    }
+    [pathPointArray removeAllObjects];
+}
+*/
+- (int)rateIt {
+    CGPoint point;
+    unsigned int i;
+
+    NSFileHandle *readFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:@"/tmp/small/z.txt"];
+    if (readFileHandle) {
+        NSData *allFileData = [readFileHandle readDataToEndOfFile];
+        NSString *allFileStr = [[NSString alloc] initWithData:allFileData encoding:NSUTF8StringEncoding];
+        NSArray *allFileStrArray = [allFileStr componentsSeparatedByString:@"\n"];
+        for (i=0; i<[allFileStrArray count]-1; i++) {
+            NSArray *lineStr = [[allFileStrArray objectAtIndex:i] componentsSeparatedByString:@" "];
+            NSString *str1 = [lineStr objectAtIndex:0];
+            NSString *str2 = [lineStr objectAtIndex:1];
+            point.x = [str1 floatValue];
+            point.y = [str2 floatValue];
+            if (point.x==0 && point.y==0) {
+                [self checkCollinearity];
+                /*
+                [self writePathToFile:myHandle];
+                NSString *content= [NSString stringWithFormat:@"SECOND\n"];
+                NSData *theData=[content dataUsingEncoding:NSUTF8StringEncoding];
+                [myHandle writeData:theData];
+                 */
+            } else
+                [pathPointArray addObject:[NSValue valueWithCGPoint:point]];
+        }
+        [readFileHandle closeFile];
+    }
+    // reduce checkpoints by check the collinearity of points
+    [self checkCollinearity];
+    //[self writePathToFile:myHandle];
     return 90;
 }
 

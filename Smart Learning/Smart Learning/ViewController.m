@@ -24,7 +24,7 @@
     
     // initial alphabet page starts with 'A'
     lastAlphabet = 'A';
-    StrokeArray tempArray = {1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1};
+    StrokeArray tempArray = {1,1,1,1,1,2,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1};
     [upperLetterTracingView setStrokCountArray:tempArray];
     StrokeArray tempArray2 = {1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1};
     [lowerLetterTracingView setStrokCountArray:tempArray2];
@@ -141,7 +141,6 @@
     colorView.hidden = false;
     homeView.hidden = true;
     menuView.hidden = true;
-    [self setImages:lastAlphabet];
     alphabetView.hidden = true;
     colorScoreView.hidden = true;
 }
@@ -205,6 +204,7 @@
 // set images according to the alphabet letter
 - (void) setImages:(char) letter {    
     lastAlphabet = letter;
+    [self showAlphabetPg];
     NSString *name = [NSString stringWithFormat:@"pic%c.png",letter];
     UIImage *image = [UIImage imageNamed:name];
     [pic setImage:image];
@@ -226,9 +226,30 @@
     if (strokeCount > 0) {
         if ( strokeCount != [upperLetterTracingView getLetterStrokeCount:index]) {
              upperLetterScore = -1;
-        } else {
-            // check accuracy compared to the dotted alphabet on the image
-            upperLetterScore = [upperLetterTracingView rateIt];
+        } else { // check accuracy compared to the dotted alphabet on the image
+          /*
+        NSString *filePath = [NSString stringWithFormat:@"/tmp/big%c.txt",lastAlphabet];
+            NSFileHandle *myHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+            if (myHandle == nil)
+                NSLog(@"Failed to open file");
+            else {
+                NSString *content= [NSString stringWithFormat:@"%c:\n", lastAlphabet];
+                NSData *theData=[content dataUsingEncoding:NSUTF8StringEncoding];
+                [myHandle seekToEndOfFile];
+                [myHandle writeData:theData];
+
+           }
+        */
+        upperLetterScore = [upperLetterTracingView rateIt];
+            /*
+        if (myHandle) {
+            NSString *content= [NSString stringWithFormat:@"END %c\n", lastAlphabet];
+            NSData *theData=[content dataUsingEncoding:NSUTF8StringEncoding];
+            [myHandle seekToEndOfFile];
+            [myHandle writeData:theData];
+            [myHandle closeFile];
+        }
+             */
         }
     }
     strokeCount = [lowerLetterTracingView getStrokeCount];
@@ -236,24 +257,51 @@
         if (strokeCount != [lowerLetterTracingView getLetterStrokeCount:index]) {
             lowerLetterScore = -1;
         } else { // check accuracy compared to the dotted alphabet on the image
+
+            /*
+            NSString *filePath = [NSString stringWithFormat:@"/tmp/small%c.txt",lastAlphabet];
+            NSFileHandle *myHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+            if (myHandle == nil)
+                NSLog(@"Failed to open file");
+            else {
+                NSString *content= [NSString stringWithFormat:@"%c:\n", lastAlphabet];
+                NSData *theData=[content dataUsingEncoding:NSUTF8StringEncoding];
+                [myHandle seekToEndOfFile];
+                [myHandle writeData:theData];
+                
+            }
+            */
             lowerLetterScore = [lowerLetterTracingView rateIt];
+            /*
+            if (myHandle) {
+                NSString *content= [NSString stringWithFormat:@"END %c\n", lastAlphabet];
+                NSData *theData=[content dataUsingEncoding:NSUTF8StringEncoding];
+                [myHandle seekToEndOfFile];
+                [myHandle writeData:theData];
+                [myHandle closeFile];
+            }
+*/
         }
     }
     // show score
     UIImage *image1, *image2;
     if (upperLetterScore == -1) { // user used more than the correct number of stroke
+        NSLog(@"incorrect # of stroke");
         image1 = [UIImage imageNamed:@"wrongStroke.png"];
     } else if (upperLetterScore == 0) { // user didn't trace this letter, suggest trying
+        NSLog(@"Try tracing");
         image1 = [UIImage imageNamed:@"tryit.png"];
     } else { // show the score
-        
+        NSLog(@"%d",upperLetterScore);
     }
     if (lowerLetterScore == -1) { // user used more than the correct number of stroke
+        NSLog(@"incorrect # of stroke");
         image2 = [UIImage imageNamed:@"wrongStroke.png"];
     } else if (lowerLetterScore == 0) { // user didn't trace this letter, suggest trying
+        NSLog(@"Try tracing");
         image2 = [UIImage imageNamed:@"tryit.png"];
     } else { // show the score
-        
+        NSLog(@"%d",lowerLetterScore);
     }
 }
 
