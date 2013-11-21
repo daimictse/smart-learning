@@ -709,7 +709,7 @@
         <image name="lowerA.png" width="75" height="76"/>
         <image name="menu.jpg" width="120" height="80"/>
         <image name="menuBkgd.png" width="259" height="399"/>
-        <image name="picA.png" width="747" height="793"/>
+        <image name="picA.png" width="664" height="664"/>
         <image name="questionMark.jpg" width="794" height="739"/>
         <image name="red.png" width="149" height="150"/>
         <image name="upperA.png" width="92" height="75"/>
