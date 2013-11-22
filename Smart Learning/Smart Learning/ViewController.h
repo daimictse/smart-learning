@@ -74,6 +74,7 @@ typedef int ColorMatrix[6][6];
 
 // inside alphabet page
 - (void) setImages:(char) letter;
+- (void) setDefaultPoints;
 - (IBAction) watchAlphabetAnimation;
 - (IBAction) closeAnimation;
 - (IBAction) RateAlphabetTracing;

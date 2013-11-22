@@ -30,7 +30,7 @@ typedef int StrokeArray[26];
 - (void)setStrokCountArray:(StrokeArray)tempArray;
 - (void)resetDrawingPad ;
 //-(NSMutableArray *)getPathPoints;
-- (NSMutableArray *) setDefaultPoints;
+- (void) setDefaultPoints:(char)letter points:(NSMutableArray *)points;
 - (float)rateItWithTemplate:(char)letter;
 - (CGContextRef)MyCreateBitmapContext:(int)pixelW height:(int)pixelH;
 - (float) drawAndComparePaths:(NSMutableArray *)points template:(NSMutableArray *)templatePts;
