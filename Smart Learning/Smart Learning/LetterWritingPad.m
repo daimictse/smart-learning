@@ -190,36 +190,36 @@
     CFDataRef templatePixelData = CGDataProviderCopyData(CGImageGetDataProvider(templateImage.CGImage));
     const UInt8* templateData = CFDataGetBytePtr(templatePixelData);
     
-    int numCompares = 0;
     int numCorrect = 0;
-    int numDiff=0;
+    float numDiff=0;
+
     for (int x=0; x<140; x++) { //140
         for (int y=0; y<176; y++) { //176
             int pixelInfo = ((image.size.width  * y) + x ) * 4;
             UInt8 red = data[pixelInfo]; // the path was drawned in red
             int templatePixelInfo = ((templateImage.size.width  * y) + x ) * 4;
             UInt8 templateRed = templateData[templatePixelInfo];
-            if (red || templateRed) {
-                numCompares++;
-                if (red == templateRed)
-                    numCorrect++;
-                else
-                    numDiff++;
-            }
+            numDiff += abs(red - templateRed) / (float)255;
+            if ((red || templateRed) && (red == templateRed))
+                numCorrect++;
         }
     }
+    
     CFRelease(pixelData);
     CFRelease(templatePixelData);
-    
-    float correctness = (float)numCorrect / (float)numCompares;
-    if (correctness == 0)
+
+    numDiff = (numDiff * 100) / (140 * 176);
+    NSLog(@"numDiff: %0.2f", numDiff);
+    if (numCorrect == 0)
         return 0;
-    else if (correctness >= 0.90)
+    else if (numDiff < 8)
         return 100.0;
-    else if (correctness < 0.90 && correctness >= 0.80)
+    else if (numDiff < 16 && numDiff >= 8)
         return 90.0;
-    else
+    else if (numDiff < 24 && numDiff >= 16)
         return 80.0;
+    else
+        return 70.0;
 }
 
 - (float)comparePoints:(NSMutableArray *)points to:(NSMutableArray *)templatePts {
