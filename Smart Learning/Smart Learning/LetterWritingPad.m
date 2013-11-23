@@ -106,15 +106,17 @@
 }
 
 - (float)rateItWithTemplate:(char)letter {
+    /*
     CGPoint point;
     unsigned int i;
 //    NSMutableArray *thisPath;
 
+    NSLog(@"%c", letter);
     for (i=0; i<[pathPointArray count]; i++) {
         point = [[pathPointArray objectAtIndex:i] CGPointValue];
         NSLog(@"[points addObject:[NSValue valueWithCGPoint:CGPointMake(%.2f, %.2f)]];", point.x, point.y);
     }
-
+*/
     pathPointArray = [self resample:pathPointArray];
     
     //ascii code of A is 65
@@ -225,6 +227,14 @@
     return grade;
 }
 
+- (void) setDefaultPoints:(char)letter points:(NSMutableArray *)points {
+    //ascii code of A is 65
+    int i = [[NSString stringWithFormat:@"%c",letter] characterAtIndex:0] - 65;
+    [defaultPoints insertObject:points atIndex:i];
+    defaultPoints[i] = [self resample:defaultPoints[i]];
+}
+
+/*
 - (float)comparePoints:(NSMutableArray *)points to:(NSMutableArray *)templatePts {
     float e = 0.5f;
     float step = floor(pow([points count], 1-e));
@@ -237,7 +247,7 @@
     }
     return min;
 }
-
+*/
 - (float)pathLength:(NSMutableArray *)points {
     float d = 0.0f;
     
@@ -248,7 +258,7 @@
     }
     return d;
 }
-
+/*
 - (float) compareDistanceFrom:(NSMutableArray *)points1 to:(NSMutableArray *)points2 start:(int)start {
     int numPoints1 = [points1 count];
     
@@ -281,18 +291,12 @@
     
     return sum;
 }
-
+*/
 - (float) distanceFrom:(CGPoint)point1 to:(CGPoint)point2 {
     float deltaX = point2.x - point1.x;
     float deltaY = point2.y - point1.y;
     return sqrt(deltaX * deltaX + deltaY * deltaY);
 }
 
-- (void) setDefaultPoints:(char)letter points:(NSMutableArray *)points {
-    //ascii code of A is 65
-    int i = [[NSString stringWithFormat:@"%c",letter] characterAtIndex:0] - 65;
-    [defaultPoints insertObject:points atIndex:i];
-    defaultPoints[i] = [self resample:defaultPoints[i]];
-}
 
 @end

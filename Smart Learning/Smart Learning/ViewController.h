@@ -34,6 +34,7 @@ typedef int ColorMatrix[6][6];
     IBOutlet UIImageView *upperLetter;
     IBOutlet UIImageView *lowerLetter;
     IBOutlet UIImageView *animation;
+    IBOutlet UIImageView *animation2;
     char lastAlphabet;
     int expectedStrokeCount;
     
