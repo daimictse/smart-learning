@@ -138,11 +138,11 @@
 - (CGContextRef)MyCreateBitmapContext:(int)pixelW height:(int)pixelH {
     CGContextRef context = nil;
     CGColorSpaceRef colorSpace;
-    int bitmapByteCount;
+    //int bitmapByteCount;
     int bitmapBytesPerRow;
     
     bitmapBytesPerRow = pixelW * 4;
-    bitmapByteCount = (bitmapBytesPerRow * pixelH);
+    //bitmapByteCount = (bitmapBytesPerRow * pixelH);
     
     colorSpace = CGColorSpaceCreateDeviceRGB();
     context = CGBitmapContextCreate(NULL, pixelW, pixelH, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);

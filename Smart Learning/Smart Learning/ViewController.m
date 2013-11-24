@@ -251,10 +251,10 @@
     alphabetAnimationView.hidden = false;
 
     NSString *filename = [NSString stringWithFormat:@"big%c", lastAlphabet];
-    [animation setImage:[UIImage animatedImageNamed:filename duration:7]];
+    [animation setImage:[UIImage animatedImageNamed:filename duration:6]];
     
     NSString *filename2 = [NSString stringWithFormat:@"small%c", lastAlphabet];
-    [animation2 setImage:[UIImage animatedImageNamed:filename2 duration:7]];
+    [animation2 setImage:[UIImage animatedImageNamed:filename2 duration:6]];
 }
 
 - (IBAction) closeAnimation {
