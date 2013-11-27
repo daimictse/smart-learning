@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+from flask import Flask, request
+import dbapp
+
+app = Flask(__name__)
+
+@app.route("/", methods=['POST'])
+def index():
+    dbapp.connect_to_db()
+    username = request.args.get("username")
+    password = request.args.get("password")
+    rows = dbapp.get_user(username, password)
+    if len(rows) == 0:
+        dbapp.create_user(username, password);
+
+    return "True"
+
+
+if __name__ == "__main__":
+    app.run(debug = True)

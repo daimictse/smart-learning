@@ -22,6 +22,7 @@ typedef int ColorMatrix[6][6];
     // inside home
     IBOutlet UITextField *usernameField;
     NSString *username;
+    BOOL userLogin;
 
     // inside menu
     IBOutlet UIButton *userNameButton;

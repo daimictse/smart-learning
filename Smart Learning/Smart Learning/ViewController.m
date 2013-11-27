@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    userLogin = false;
     menuView.hidden = true;
     alphabetView.hidden = true;
     colorView.hidden = true;
@@ -107,10 +108,27 @@
 
 - (IBAction)processLogin {
     NSLog(@"%@",username);
+    userLogin = true;
+    /*
     // log in for existing user or create user
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:5000/"]];
+    request.HTTPMethod = @"POST";
     
+    // This is how we set header fields
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString *stringData = [NSString stringWithFormat:@"user=%@", username];
+    
+    [request setValue:[NSString stringWithFormat:@"%d", [stringData length]] forHTTPHeaderField:@"Content-length"];
+    [request setHTTPBody:[stringData dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // Create url connection and fire request
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (!conn) {
+        NSLog(@"Error connecting to URL for posting");
+    }
+
     // collect score history if it's an existing user
-    
+*/    
     [self switchToMenu];
 }
 
