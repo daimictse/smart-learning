@@ -37,7 +37,7 @@
                                         </connections>
                                     </textField>
                                     <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDo-Qm-sue">
-                                        <rect key="frame" x="82" y="220" width="155" height="30"/>
+                                        <rect key="frame" x="70" y="220" width="180" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Play (Skip Log in)"/>
@@ -46,16 +46,42 @@
                                         </connections>
                                     </button>
                                     <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nww-9h-JJn">
-                                        <rect key="frame" x="82" y="260" width="155" height="30"/>
+                                        <rect key="frame" x="70" y="260" width="180" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Log me in">
+                                        <state key="normal" title="Log in with password...">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="processLogin" destination="vXZ-lx-hvc" eventType="touchUpInside" id="83q-3h-GRL"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4Z-7F-pDv">
+                                        <rect key="frame" x="30" y="150" width="260" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Enter Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmf-fC-hfM">
+                                                <rect key="frame" x="20" y="20" width="220" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nAR-Nd-xqA">
+                                                <rect key="frame" x="20" y="70" width="220" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="ReturnKeyButton:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="VdK-6P-S2N"/>
+                                                    <action selector="resetPwField" destination="vXZ-lx-hvc" eventType="touchDown" id="jX8-ZA-fM8"/>
+                                                    <action selector="savePw" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="TOo-dz-5gu"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -110,7 +136,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-zL-GCG">
-                                        <rect key="frame" x="170" y="20" width="20" height="20"/>
+                                        <rect key="frame" x="150" y="20" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Home" image="home.png">
@@ -644,6 +670,71 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PVZ-5O-7Hs">
+                                        <rect key="frame" x="30" y="90" width="250" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDp-sH-yZp">
+                                                <rect key="frame" x="20" y="15" width="210" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="upper letter score">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fn7-T8-2Jf">
+                                                <rect key="frame" x="20" y="55" width="210" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="lower letter score">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr0-Vm-xT1">
+                                                <rect key="frame" x="20" y="100" width="210" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="highest score 1">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDK-tI-SLq">
+                                                <rect key="frame" x="20" y="130" width="210" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="highest score 2">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbY-JB-UrU">
+                                                <rect key="frame" x="20" y="160" width="210" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="highest score 3">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6w-iD-l6C">
+                                                <rect key="frame" x="75" y="205" width="100" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="26"/>
+                                                <state key="normal" title="Close">
+                                                    <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeAlphabetScore" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HFk-WY-0Q0"/>
+                                                    <action selector="closeAnimation" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nqL-6g-dF4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -652,6 +743,7 @@
                     </view>
                     <connections>
                         <outlet property="alphabetAnimationView" destination="8Cv-TJ-DiI" id="iBa-VM-i18"/>
+                        <outlet property="alphabetScoreView" destination="PVZ-5O-7Hs" id="D4L-yE-2c1"/>
                         <outlet property="alphabetView" destination="C2H-Xn-3DW" id="DXj-XR-1NU"/>
                         <outlet property="animation" destination="Jds-XE-1L9" id="LPr-Ry-zey"/>
                         <outlet property="animation2" destination="pjo-Pl-w8K" id="phK-w2-iL6"/>
@@ -660,14 +752,21 @@
                         <outlet property="colorScoreImageView" destination="x4o-Te-FNW" id="VhN-R7-8GK"/>
                         <outlet property="colorScoreView" destination="fEE-qn-MUa" id="wX7-1P-4Nc"/>
                         <outlet property="colorView" destination="Bih-zk-fXf" id="NWV-3T-aB7"/>
+                        <outlet property="highestButton1" destination="kr0-Vm-xT1" id="T6d-AL-MRq"/>
+                        <outlet property="highestButton2" destination="bDK-tI-SLq" id="Rye-zO-1An"/>
+                        <outlet property="highestButton3" destination="PbY-JB-UrU" id="lLI-VH-JUu"/>
                         <outlet property="homeView" destination="X2n-H2-SxY" id="dxf-BY-jVN"/>
                         <outlet property="lowerLetter" destination="7m1-N7-tq9" id="vEk-Tj-0S3"/>
                         <outlet property="lowerLetterTracingView" destination="Syf-ix-Dg1" id="r5D-Ec-ccL"/>
+                        <outlet property="lowerScoreButton" destination="Fn7-T8-2Jf" id="PYn-R8-DLn"/>
                         <outlet property="menuView" destination="c5E-Zj-MhM" id="B2s-Ha-BhO"/>
                         <outlet property="mixedColorView" destination="vAz-Kz-IOF" id="SW4-8N-Lf1"/>
                         <outlet property="pic" destination="ees-Mf-IF9" id="jpM-3L-m9m"/>
+                        <outlet property="pwField" destination="nAR-Nd-xqA" id="av7-cW-YLY"/>
+                        <outlet property="pwView" destination="w4Z-7F-pDv" id="ORQ-2k-aH2"/>
                         <outlet property="upperLetter" destination="PFB-VD-9lY" id="ImH-a1-ofk"/>
                         <outlet property="upperLetterTracingView" destination="xhr-CN-Pkd" id="30E-ye-PNY"/>
+                        <outlet property="upperScoreButton" destination="ZDp-sH-yZp" id="YYZ-yN-Krn"/>
                         <outlet property="userNameButton" destination="Eyn-Jw-u1y" id="lte-XX-UgP"/>
                         <outlet property="usernameField" destination="BDE-Kh-F0q" id="R8u-nG-TVB"/>
                     </connections>
@@ -710,9 +809,13 @@
         <image name="0.gif" width="100" height="125"/>
         <image name="cursive alphabet resz.png" width="320" height="480"/>
         <image name="done.jpg" width="200" height="200"/>
+        <image name="done.jpg" width="200" height="200"/>
         <image name="green.png" width="115" height="87"/>
         <image name="home.png" width="725" height="752"/>
+        <image name="home.png" width="725" height="752"/>
+        <image name="home.png" width="725" height="752"/>
         <image name="lowerA.png" width="75" height="76"/>
+        <image name="menu.jpg" width="120" height="80"/>
         <image name="menu.jpg" width="120" height="80"/>
         <image name="menuBkgd.png" width="259" height="399"/>
         <image name="picA.png" width="664" height="664"/>

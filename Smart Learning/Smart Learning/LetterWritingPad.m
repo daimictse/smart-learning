@@ -220,10 +220,11 @@
     if (numMustBeCorrect == 0)
         return 0;
     
-    int weight = 4;
-    int totalCount = (140 * 176) + (numTemplateRed * (weight-1));  // matches to template scores more
-    grade = ((numMustBeCorrect * weight) + numEasilyCorrect) / (float)totalCount;
-    NSLog(@"%d * %d + %d / %d = Grade: %0.2f", numMustBeCorrect, weight, numEasilyCorrect,totalCount, grade);
+    float weight = 7.5;
+    float blankSpaceWeight = 2.5;
+    int totalCount = (140 * 176) * blankSpaceWeight + (numTemplateRed * (weight-1));  // matches to template scores more
+    grade = ((numMustBeCorrect * weight) + (numEasilyCorrect * blankSpaceWeight)) / (float)totalCount * 100;
+    NSLog(@"%d * %0.1f + %d * %0.1f / %d = Grade: %0.2f", numMustBeCorrect, weight, numEasilyCorrect,blankSpaceWeight, totalCount, grade);
     return grade;
 }
 

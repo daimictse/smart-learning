@@ -23,6 +23,9 @@ typedef int ColorMatrix[6][6];
     IBOutlet UITextField *usernameField;
     NSString *username;
     BOOL userLogin;
+    IBOutlet UIView *pwView;
+    IBOutlet UITextField *pwField;
+    NSString *password;
 
     // inside menu
     IBOutlet UIButton *userNameButton;
@@ -31,11 +34,17 @@ typedef int ColorMatrix[6][6];
     IBOutlet LetterWritingPad *upperLetterTracingView;
     IBOutlet LetterWritingPad *lowerLetterTracingView;
     IBOutlet UIView *alphabetAnimationView;
+    IBOutlet UIView *alphabetScoreView;
     IBOutlet UIImageView *pic;
     IBOutlet UIImageView *upperLetter;
     IBOutlet UIImageView *lowerLetter;
     IBOutlet UIImageView *animation;
     IBOutlet UIImageView *animation2;
+    IBOutlet UIButton *upperScoreButton;
+    IBOutlet UIButton *lowerScoreButton;
+    IBOutlet UIButton *highestButton1;
+    IBOutlet UIButton *highestButton2;
+    IBOutlet UIButton *highestButton3;
     char lastAlphabet;
     int expectedStrokeCount;
     
@@ -55,6 +64,8 @@ typedef int ColorMatrix[6][6];
 
 - (IBAction)saveUser;
 - (IBAction)resetNameField;
+- (IBAction)savePw;
+- (IBAction)resetPwField;
 - (IBAction)switchToMenu;
 - (IBAction)processLogin;
 - (IBAction)ReturnKeyButton: (id)sender;
@@ -80,6 +91,9 @@ typedef int ColorMatrix[6][6];
 - (IBAction) watchAlphabetAnimation;
 - (IBAction) closeAnimation;
 - (IBAction) RateAlphabetTracing;
+- (IBAction) closeAlphabetScore;
+- (NSString *)scoreRating:(char)letter scorePt:(float)scorePt;
+- (IBAction) storeScore:(NSString *)data;
 - (IBAction)loadA;
 - (IBAction)loadB;
 - (IBAction)loadC;

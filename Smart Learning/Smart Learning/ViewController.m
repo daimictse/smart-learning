@@ -18,18 +18,24 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    username = nil;
+    password = nil;
     userLogin = false;
+    pwView.hidden = true;
     menuView.hidden = true;
     alphabetView.hidden = true;
     colorView.hidden = true;
     
+    alphabetAnimationView.layer.borderColor = [[UIColor grayColor] CGColor];
+    alphabetAnimationView.layer.borderWidth = 2;
+    alphabetScoreView.layer.borderColor = [[UIColor grayColor] CGColor];
+    alphabetScoreView.layer.borderWidth = 2;
+    colorScoreView.layer.borderColor = [[UIColor grayColor] CGColor];
+    colorScoreView.layer.borderWidth = 2;
+    
     // initial alphabet page starts with 'A'
     lastAlphabet = 'A';
-    //StrokeArray tempArray = {1,1,1,1,1,2,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1};
-    //[upperLetterTracingView setStrokCountArray:tempArray];
-    
-    //StrokeArray tempArray2 = {1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1};
-    //[lowerLetterTracingView setStrokCountArray:tempArray2];
+
     [self setDefaultPoints];
     
     // initial colors are green and red, and answer is the 'question marks'
@@ -93,6 +99,24 @@
     NSLog(@"%@",username);
 }
 
+- (IBAction)resetPwField {
+    pwField.text = @"";
+    pwField.textColor = [UIColor blackColor];
+}
+
+- (IBAction)savePw {
+    password = [pwField text];
+    NSLog(@"%@",password);
+    if (![password  isEqual: @""]) {
+        pwField.text = @"";
+        pwView.hidden = true;
+        [self switchToMenu];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please Enter a Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
 - (IBAction)switchToMenu {
     menuView.hidden = false;
     homeView.hidden = true;
@@ -103,33 +127,21 @@
         [userNameButton setTitleColor:[UIColor magentaColor] forState:0];
         userNameButton.titleLabel.font = [UIFont fontWithName:@"BradleyHandITCTT-Bold" size:40];//systemFontOfSize:40];
         [userNameButton setTitle:username forState:0];
+        [self resetNameField];
     }
 }
 
 - (IBAction)processLogin {
     NSLog(@"%@",username);
-    userLogin = true;
-    /*
-    // log in for existing user or create user
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:5000/"]];
-    request.HTTPMethod = @"POST";
-    
-    // This is how we set header fields
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    NSString *stringData = [NSString stringWithFormat:@"user=%@", username];
-    
-    [request setValue:[NSString stringWithFormat:@"%d", [stringData length]] forHTTPHeaderField:@"Content-length"];
-    [request setHTTPBody:[stringData dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (!conn) {
-        NSLog(@"Error connecting to URL for posting");
+    if (username) {
+        pwView.hidden = false;
+        [pwField becomeFirstResponder];
+        userLogin = true;
+        [self resetNameField];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please Enter a Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
-
-    // collect score history if it's an existing user
-*/    
-    [self switchToMenu];
 }
 
 -(IBAction)ReturnKeyButton: (id) sender {
@@ -137,6 +149,7 @@
 }
 
 - (IBAction)switchToHome {
+    username = nil;
     homeView.hidden = false;
     menuView.hidden = true;
     alphabetView.hidden = true;
@@ -155,6 +168,7 @@
     menuView.hidden = true;
     colorView.hidden = true;
     alphabetAnimationView.hidden = true;
+    alphabetScoreView.hidden = true;
 }
 
 - (IBAction)showColorPg {
@@ -163,6 +177,16 @@
     menuView.hidden = true;
     alphabetView.hidden = true;
     colorScoreView.hidden = true;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if ([alertView.message hasSuffix:@"Name"]) {
+        [self resetNameField];
+        [usernameField becomeFirstResponder];
+    } else {
+        [self resetPwField];
+        [pwField becomeFirstResponder];
+    }
 }
 
 // determine which color by the swipe gesture
@@ -236,10 +260,57 @@
     [lowerLetter setImage:image];
 }
 
+- (NSString *)scoreRating:(char)letter scorePt:(float)scorePt {
+    NSString *score;
+    if (scorePt > 80.0)
+        score = [NSString stringWithFormat:@"'%c': **EXCELLENT**", letter];
+    else if (scorePt > 70.0)
+        score = [NSString stringWithFormat:@"'%c': *Good Job*", letter];
+    else if (scorePt == 0)
+        score = [NSString stringWithFormat:@"'%c': Try Again", letter];
+    else
+        score = [NSString stringWithFormat:@"'%c': You can do better!", letter];
+    return score;
+}
+
+- (IBAction)storeScore:(NSString *)data {
+    // log in for existing user or create user
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:5000/"]];
+    request.HTTPMethod = @"POST";
+    
+    // This is how we set header fields
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
+    [request setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-length"];
+    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
+    
+//    NSData *requestBodyData = [data dataUsingEncoding:NSUTF8StringEncoding];
+//    request.HTTPBody = requestBodyData;
+    
+    //    [request setValue:[NSString stringWithFormat:@"%d", [stringData length]] forHTTPHeaderField:@"Content-length"];
+    //    [request setHTTPBody:[stringData dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // Create url connection and fire request
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    if (!conn) {
+        NSLog(@"Error connecting to URL for posting");
+    } else
+        [conn start];
+}
+
 - (IBAction)RateAlphabetTracing {
     float upperLetterScore=0;
     float lowerLetterScore=0;
+    
+    NSString *highestLetter1 = nil;
+    NSString *highestLetter2 = nil;
+    NSString *highestLetter3 = nil;
+    float highest1=0.0;
+    float highest2=0.0;
+    float highest3=0.0;
 
+    alphabetScoreView.hidden = false;
+    
     int strokeCount = [upperLetterTracingView getStrokeCount];
     if (strokeCount > 0) {
         upperLetterScore = [upperLetterTracingView rateItWithTemplate:lastAlphabet];
@@ -250,19 +321,110 @@
     }
     
     // show score
-    UIImage *image1, *image2;
-    if (upperLetterScore == 0) { // user didn't trace this letter, suggest trying
-        NSLog(@"Try tracing");
-        image1 = [UIImage imageNamed:@"tryit.png"];
-    } else { // show the score
-        NSLog(@"%2.0f",upperLetterScore);
+    NSString *score = [self scoreRating:lastAlphabet scorePt:upperLetterScore];
+    [upperScoreButton setTitle:score forState:0];
+    
+    score = [self scoreRating:tolower(lastAlphabet) scorePt:lowerLetterScore];
+    [lowerScoreButton setTitle:score forState:0];
+
+    if (!userLogin) {
+        [highestButton1 setTitle:@"" forState:0];
+        [highestButton2 setTitle:@"" forState:0];
+        [highestButton3 setTitle:@"" forState:0];
+    } else {
+        // collect score history if it's an existing user
+        // first handle the current scores
+        if (upperLetterScore) {
+            highest1 = upperLetterScore;
+            highestLetter1 = [NSString stringWithFormat:@"%c", lastAlphabet];
+        }
+        if (lowerLetterScore) {
+            if (upperLetterScore > lowerLetterScore) {
+                highest2 = lowerLetterScore;
+                highestLetter2 = [NSString stringWithFormat:@"%c", tolower(lastAlphabet)];
+            } else {
+                highest2 = highest1;
+                highestLetter2 = highestLetter1;
+                highest1 = lowerLetterScore;
+                highestLetter1 = [NSString stringWithFormat:@"%c", tolower(lastAlphabet)];
+            }
+        }
+
+        // insert current scores
+        if (upperLetterScore > 0)
+            [self storeScore:[NSString stringWithFormat:@"user=%@&password=%@&letter=%c&score=%0.2f", username, password, lastAlphabet, upperLetterScore]];
+        if (lowerLetterScore > 0)
+            [self storeScore:[NSString stringWithFormat:@"user=%@&password=%@&letter=%c&score=%0.2f", username, password, tolower(lastAlphabet), lowerLetterScore]];
+        
+        // read the recorded scores
+        NSURL *url = [NSURL URLWithString:@"http://localhost:5000/"];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"ret=%@", ret);
+        
+        NSScanner *scanner = [NSScanner scannerWithString:ret];
+        NSString *thisUser;
+        NSString *thisPW;
+        NSString *thisLetter;
+        float thisScore;
+        
+        while ([scanner isAtEnd] == NO) {
+            [scanner scanUpToString:@"/" intoString:&thisUser];
+            [scanner scanString:@"/" intoString:nil];
+            [scanner scanUpToString:@"/" intoString:&thisPW];
+            //NSLog(@"%@ %@", thisUser, thisPW);
+            if ([thisUser isEqualToString:username] && [thisPW isEqualToString:password]) {
+                [scanner scanString:@"/" intoString:nil];
+                [scanner scanUpToString:@"/" intoString:&thisLetter];
+                [scanner scanString:@"/" intoString:nil];
+                [scanner scanFloat:&thisScore];
+                char firstLetter = [thisLetter characterAtIndex:0];
+                if (((firstLetter != lastAlphabet) && (firstLetter != tolower(lastAlphabet))) ||
+                    (firstLetter == lastAlphabet && abs(thisScore-upperLetterScore)>1) ||
+                    (firstLetter == tolower(lastAlphabet) && abs(thisScore-lowerLetterScore)>1)) {
+                    // find out the 3 highest scores
+                    if (thisScore > highest1) {
+                        highest3 = highest2;
+                        highest2 = highest1;
+                        highest1 = thisScore;
+                        highestLetter3 = highestLetter2;
+                        highestLetter2 = highestLetter1;
+                        highestLetter1 = thisLetter;
+                    } else if (thisScore > highest2) {
+                        highest3 = highest2;
+                        highest2 = thisScore;
+                        highestLetter3 = highestLetter2;
+                        highestLetter2 = thisLetter;
+                    } else if (thisScore > highest3) {
+                        highest3 = thisScore;
+                        highestLetter3 = thisLetter;
+                    }
+                }
+            } else
+                [scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:nil];
+        }
+        // display the 3 highest scores
+        NSLog(@"%f %f %f", highest1, highest2, highest3);
+        if (highest1 != 0.0) {
+            score = [self scoreRating:[highestLetter1 characterAtIndex:0] scorePt:highest1];
+            [highestButton1 setTitle:score forState:0];
+        } else
+            [highestButton1 setTitle:@"NO 1st highest score" forState:0];
+        if (highest2 != 0.0) {
+            score = [self scoreRating:[highestLetter2 characterAtIndex:0] scorePt:highest2];
+            [highestButton2 setTitle:score forState:0];
+        } else
+            [highestButton2 setTitle:@"NO 2nd highest score" forState:0];
+        if (highest3 != 0.0) {
+            score = [self scoreRating:[highestLetter3 characterAtIndex:0] scorePt:highest3];
+            [highestButton3 setTitle:score forState:0];
+        } else
+            [highestButton3 setTitle:@"NO 3rd highest score" forState:0];
     }
-    if (lowerLetterScore == 0) { // user didn't trace this letter, suggest trying
-        NSLog(@"Try tracing");
-        image2 = [UIImage imageNamed:@"tryit.png"];
-    } else { // show the score
-        NSLog(@"%2.0f",lowerLetterScore);
-    }
+}
+
+- (IBAction)closeAlphabetScore {
+    alphabetScoreView.hidden = true;
 }
 
 - (IBAction) watchAlphabetAnimation {
