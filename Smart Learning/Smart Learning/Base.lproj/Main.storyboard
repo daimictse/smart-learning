@@ -823,9 +823,13 @@
         <image name="0.gif" width="100" height="125"/>
         <image name="cursive alphabet resz.png" width="320" height="480"/>
         <image name="done.jpg" width="200" height="200"/>
+        <image name="done.jpg" width="200" height="200"/>
         <image name="green.png" width="115" height="87"/>
         <image name="home.png" width="725" height="752"/>
+        <image name="home.png" width="725" height="752"/>
+        <image name="home.png" width="725" height="752"/>
         <image name="lowerA.png" width="75" height="76"/>
+        <image name="menu.jpg" width="120" height="80"/>
         <image name="menu.jpg" width="120" height="80"/>
         <image name="menuBkgd.png" width="259" height="399"/>
         <image name="picA.png" width="664" height="664"/>
