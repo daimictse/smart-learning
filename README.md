@@ -12,6 +12,6 @@ Ideal paths are define for each lowercase and uppercase of each of the 26 alphab
 The mini-game of color mixing has a set of basic colors.  A matrix with the correct color combinations is used to compare the result.
 
 ![alt home](https://raw.github.com/daimictse/smart-learning/master/homepage.png)
-![alt menu](https://raw.github.com/daimictse/smart-learning/master/menu.png)
-![alt cursiveA](https://raw.github.com/daimictse/smart-learning/master/cursiveA.png)
-![alt color](https://raw.github.com/daimictse/smart-learning/master/color.png)
+![alt menu](https://raw.github.com/daimictse/smart-learning/master/menupage.png)
+![alt cursiveA](https://raw.github.com/daimictse/smart-learning/master/alphabetpage.png)
+![alt color](https://raw.github.com/daimictse/smart-learning/master/colorpage.png)
